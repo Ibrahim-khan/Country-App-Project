@@ -1,8 +1,14 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const url = "https://restcountries.com/v3.1/all"
+const App = () =>  {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [countries, setCountries] = useState([]);
+  
 
   return (
     <>
