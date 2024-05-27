@@ -1,5 +1,7 @@
 import React from 'react'
 
+import style from './country.module.css'
+
 const Country = (props) => {
   const {name, flags, capital, population, area} = props.country;
 
