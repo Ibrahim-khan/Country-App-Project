@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {v4 as uuidv4} from "uuid";
-import Country from './Country';
+import Country from './Country.jsx';
 
 const Countries = (props) => {
   return (
