@@ -30,6 +30,10 @@ const App = () =>  {
   useEffect (() => {
     fetchData(url);
   }, []);
+
+  const handleRemoveCountry = (name) =>{
+    alert (name);
+  }
   
 
   return (
@@ -37,7 +41,8 @@ const App = () =>  {
       <h1>Country App</h1>
       {isLoading && <h2>Loading ...</h2>}
       {error &&  <h2>{error.message}</h2>}  
-      {countries && <Countries countries={countries} />}      
+      {countries && <Countries countries={countries} 
+      onRemoveCountry = {handleRemoveCountry} />}      
     </>
   );
 };
