@@ -9,6 +9,9 @@ const App = () =>  {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [countries, setCountries] = useState([]);
+  const [FilteredCountries, setFilteredCountries] = 
+  useState(countries);
+
 
   const fetchData = async (url) => {
     setIsLoading(true);
@@ -17,8 +20,10 @@ const App = () =>  {
       const response = await fetch(url);
       const data = await response.json();
       setCountries(data);
+      setFilteredCountries(data);
       setIsLoading(false);
       setError(null);
+
     }catch(error){
       setIsLoading(false);
       setError(error);
@@ -32,7 +37,8 @@ const App = () =>  {
   }, []);
 
   const handleRemoveCountry = (name) =>{
-    alert (name);
+    const filter = filteredCountries.filter((country)
+  => country.name.common)
   }
   
 
